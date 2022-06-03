@@ -14,6 +14,6 @@ venv
 
 `python manage.py migrate`
 
-
+db.sqlite3 was modified
 
 **¿Qué archivos se modificaron al agregar personas?**
