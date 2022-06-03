@@ -17,3 +17,5 @@ venv
 db.sqlite3 was modified
 
 **¿Qué archivos se modificaron al agregar personas?**
+
+db.sqlite3 was modified
