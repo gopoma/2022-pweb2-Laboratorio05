@@ -7,9 +7,9 @@ class Contacto(models.Model):
     alias = models.CharField(max_length=255)
     phoneNumber = models.IntegerField()
     email = models.EmailField()
-    state = models.CharField(max_length=255, blank=True)
-    city = models.CharField(max_length=255, blank=True)
-    district = models.CharField(max_length=255, blank=True)
+    state = models.CharField(max_length=255, null=False)
+    city = models.CharField(max_length=255, null=False)
+    district = models.CharField(max_length=255, null=False)
 
     def __str__(self):
         return f"{self.fullname} ({'Yes' if self.isFamiliar else 'No'})"
