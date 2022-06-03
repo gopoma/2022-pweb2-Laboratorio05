@@ -8,4 +8,12 @@ venv
 ```
 **¿Qué archivos se modificaron al hacer makemigrations y migrate?**
 
+`python manage.py makemigrations`
+
+0001_initial.py was created
+
+`python manage.py migrate`
+
+
+
 **¿Qué archivos se modificaron al agregar personas?**
