@@ -20,3 +20,6 @@ def myHomeView(request, *args, **kwargs):
 
 def anotherView(request):
     return HttpResponse("<h1>Another View maked with Django!</h1>")
+
+def tmpView(request):
+    return render(request, "tmp.html")
