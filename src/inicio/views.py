@@ -16,10 +16,13 @@ def myHomeView(request, *args, **kwargs):
         "myList": [22, 33, 44, 55, "5to", "cuarto", True, "#", False, "${{ Invalid jinja code??? }}"]
     }
 
-    return render(request, "home.html", myContext)
+    return render(request, "initialize.html", myContext)
 
 def anotherView(request):
     return HttpResponse("<h1>Another View maked with Django!</h1>")
 
 def tmpView(request):
     return render(request, "tmp.html")
+
+def home(request):
+    return render(request, "home.html")
