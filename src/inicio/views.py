@@ -11,7 +11,9 @@ def myHomeView(request, *args, **kwargs):
     myContext = {
         "myText": "This is a beautiful text",
         "myNumber": 100,
-        "myList": [22, 33, 44, 55, "5to", "cuarto"]
+        "myBoolean": True,
+        "myAnotherBoolean": False,
+        "myList": [22, 33, 44, 55, "5to", "cuarto", True, "#", False, "${{ Invalid jinja code??? }}"]
     }
 
     return render(request, "home.html", myContext)
