@@ -15,4 +15,4 @@ def myHomeView(request, *args, **kwargs):
     return render(request, "home.html", myContext)
 
 def anotherView(request):
-    return HttpResponse("<h1>Another View!</h1>")
+    return HttpResponse("<h1>Another View maked with Django!</h1>")
