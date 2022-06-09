@@ -3,6 +3,8 @@ from django.http import HttpResponse
 
 # Create your views here.
 def myHomeView(request, *args, **kwargs):
+    # We have to take into consideration that args is a tuple and kwargs is a dictionary
+    # Like the rest operator in JavaScript
     print(args, kwargs)
     print(request.user)
 
