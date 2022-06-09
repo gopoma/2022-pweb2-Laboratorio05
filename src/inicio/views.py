@@ -9,7 +9,7 @@ def myHomeView(request, *args, **kwargs):
     print(request.user)
 
     myContext = {
-        "myText": "Some text value",
+        "myText": "This is a beautiful text",
         "myNumber": 100,
         "myList": [22, 33, 44, 55, "5to", "cuarto"]
     }
