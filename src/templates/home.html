@@ -1,12 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactos</title>
-</head>
-<body>
-    <h1>Contactos</h1>
-</body>
-</html>
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+    <title>TutoEasy</title>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        * {
+            box-sizing: bordre-box;
+            margin: 0;
+            padding: 0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: peru;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1>Hola mundo desde Django</h1>
+    <h2>con Templates</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa quasi aliquid, recusandae eaque in beatae! Iure, maxime. Tenetur odio, obcaecati aliquam magnam molestias rem deleniti eius, autem, id aut nisi?
+    Sit delectus nostrum mollitia molestias est accusantium voluptatibus debitis facere temporibus incidunt sequi iste eum hic dolores tenetur consequuntur, voluptatum saepe vitae ratione, quibusdam nam dignissimos vel? Veniam, perspiciatis dolores.
+    Totam maiores nostrum voluptatibus porro sed, ea molestiae nam in iusto sit eaque fugiat praesentium atque quidem dolorum aperiam illo assumenda amet! Ratione amet, dignissimos ipsum nostrum rerum quidem et.
+    Possimus ullam, libero laudantium assumenda autem magni ab est sunt impedit vitae velit, explicabo illum? Id debitis magnam labore porro inventore a ex pariatur exercitationem vero sed? Dolorem, consequatur voluptate.
+    Ipsa quam vel officia? Obcaecati asperiores voluptates ut ad? Aliquam unde vitae cupiditate ipsam voluptate explicabo recusandae dolores voluptas autem et eveniet ut natus, accusamus inventore, quas itaque cum distinctio.
+    Officiis accusantium consequuntur deserunt, vitae mollitia eveniet! Amet explicabo voluptate culpa itaque quos necessitatibus atque animi, delectus molestiae suscipit cupiditate labore corrupti neque. Consequatur facere iure ut repellendus quod repudiandae.
+    Ipsam repellendus eos, maiores iure, autem, distinctio a quas excepturi quos voluptatum id? Qui quia obcaecati modi, quod exercitationem quos, eaque quasi facilis sed quae quas officiis nam et minus?
+    Quo, ipsa odio! Libero architecto explicabo error dicta aut quia velit voluptate sed cumque, facilis ea rem est quo ducimus praesentium, consequuntur quos, veniam accusamus quisquam similique porro eius corporis.
+    Sed officia ratione aut explicabo quia illo fugit, laborum quaerat vitae veritatis sequi fugiat quibusdam similique unde quas necessitatibus quidem natus blanditiis repudiandae omnis voluptatum ut. Fuga accusamus obcaecati dignissimos?
+    Ratione libero vitae doloribus culpa dolorum provident, sapiente aspernatur, rerum eligendi non recusandae qui voluptatibus, dicta natus autem debitis cum laborum quasi nesciunt? Nostrum deserunt quidem dicta, commodi consequuntur quia.
+    Doloremque suscipit, culpa praesentium eligendi sapiente, nam debitis laborum minus quaerat labore corrupti, laudantium magni ipsum. Laboriosam possimus ab debitis fugit esse a incidunt aliquam ipsam quae sit. Harum, quis?
+    Culpa eos assumenda explicabo voluptas quisquam ad similique neque officiis. Molestiae laborum hic itaque, cupiditate sit magni, illo enim ut nisi natus fuga necessitatibus, nostrum quasi accusamus tenetur voluptas error.</p>
+
+    <hr>
+    <p>{{ myText }}</p>
+    <p>{{ myNumber }}</p>
+    <hr>
+    <section>
+        <ul>
+            {% for num in myList %}
+                <li>{{ forloop.counter }}: {{ num }}
+                {% if num == 33 %}
+                    - Este es un número mágico
+                {% elif num > 50 %}
+                    - Este número es mayor que 50
+                {% else %}
+                    - Normal
+                {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+    <hr>
+{% endblock %}
