@@ -25,7 +25,12 @@ def tmpView(request):
     return render(request, "tmp.html")
 
 def home(request):
-    print(request.method)
+    print(f"Method: {request.method}")
+    print(f"Host: {request.get_host()}")
+    print(f"Host's Port: {request.get_port()}")
+    print(f"Limited Path: {request.path}")
+    print(f"Full Path: {request.get_full_path()}")
+    print(request.user)
     return render(request, "home.html")
 
 def contact(request):
