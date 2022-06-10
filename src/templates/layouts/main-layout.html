@@ -22,7 +22,13 @@
         </div>
         <div class="rightcolumn">
             <aside>
-                Here goes some content of your choice
+                {% if user.is_authenticated %}
+                    <p><b>Username:</b> <span>{{ user.username }}</span></p>
+                    <p><b>Email:</b> <span>{{ user.email }}</span></p>
+                    <p><b>Who am I?:</b> <span>{{ user.first_name }} {{ user.last_name }}</span></p>
+                {% else %}
+                    <b>Not authenticated yet!</b>
+                {% endif %}
             </aside>
         </div>
     </main>

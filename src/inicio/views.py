@@ -25,6 +25,7 @@ def tmpView(request):
     return render(request, "tmp.html")
 
 def home(request):
+    print(request.method)
     return render(request, "home.html")
 
 def contact(request):

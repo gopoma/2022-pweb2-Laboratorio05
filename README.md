@@ -49,3 +49,31 @@ para que se lleve a cabo al momento de preparar las migraciones y estas alternat
 de otra manera, habría que empezar de cero con la Base de Datos.
 
 Los demás casos no aplicarían porque Django directamente no va a dejar que se realizen sin añadir otro factor de Normalización.
+
+**¡Cree más vistas!**
+
+`✘`
+
+**¡CREE SUS PROPIAS PLANTILLAS!**
+
+`✘`
+
+**Revise la documentación sobre el objeto request y pruebe otras de sus propiedades (atributos o métodos)**
+
+`✘`
+
+**Realice sus propias plantillas usando la Base**
+
+`✘`
+
+**Cree más bloques**
+
+`✘`
+
+**Verifique las opciones de navegación que aparecen en el resto de sus vistas**
+
+`✘`
+
+**Revisar el objeto forloop en la documentación oficial y hacer experimentos**
+
+**Revisar la documentación oficial sobre if, hacer experimentos con otros operadores de comparación**
