@@ -87,3 +87,34 @@ Los demás casos no aplicarían porque Django directamente no va a dejar que se 
 |`forloop.parentloop` |For nested loops, this is the loop surrounding the current one|
 
 **Revisar la documentación oficial sobre if, hacer experimentos con otros operadores de comparación**
+
+`if`
+
+* **Boolean operators**
+```python
+== # {% if myNum == 50 %} {% if myName == "Gustavo" %}
+!= # {% if myNum != 100 %}
+< # {% if myNum < 16 %}
+> # {% if myNum > 25 %}
+<= # {% if myNum <= 50 %}
+>= # {% if myScore >= 50 %}
+in # {% if "Bearer" in "Bearer ..." %}
+not in # {% if user not in admins %}
+is # {% if user.is_authenticated is True %}
+is not # {% if user.is_staff is not False %}
+```
+
+* **You are able to use filters in your expressions**
+```python
+{% if fullname|length >= 100 %}
+    <p>Your name is too large!</p>
+{% endif %}
+```
+
+* **Complex Expressions**
+```python
+or # {% if isWeekend or isAFreeDay %}
+and # {% if myScore >= 50 and myScore <= 75 %}
+not # {% if not myScore >= 50 %}
+in # {% if user in admins %}
+```
