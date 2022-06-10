@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +8,24 @@
     {% block title %}
         Here goes your title
     {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/index.js' %}"></script>
 </head>
 <body>
+    {% include '../components/header.html' %}
     {% include '../components/navbar.html' %}
-    {% block content %}
-        Here goes your content
-    {% endblock %}
+    <main class="main">
+        <div class="leftcolumn">
+            {% block content %}
+                Here goes your content
+            {% endblock %}
+        </div>
+        <div class="rightcolumn">
+            <aside>
+                Here goes some content of your choice
+            </aside>
+        </div>
+    </main>
     {% include '../components/footer.html' %}
 </body>
 </html>
