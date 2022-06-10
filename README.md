@@ -76,4 +76,14 @@ Los demás casos no aplicarían porque Django directamente no va a dejar que se 
 
 **Revisar el objeto forloop en la documentación oficial y hacer experimentos**
 
+| Variable          | Description   |
+|-------------------|-------------  |
+|`forloop.counter`    |The current iteration of the loop (1-indexed)|
+|`forloop.counter0`   |The current iteration of the loop (0-indexed)|
+|`forloop.revcounter` |The number of iterations from the end of the loop (1-indexed)|
+|`forloop.revcounter0`|The number of iterations from the end of the loop (0-indexed)|
+|`forloop.first`      |True if this is the first time through the loop|
+|`forloop.last`       |True if this is the last time through the loop|
+|`forloop.parentloop` |For nested loops, this is the loop surrounding the current one|
+
 **Revisar la documentación oficial sobre if, hacer experimentos con otros operadores de comparación**
