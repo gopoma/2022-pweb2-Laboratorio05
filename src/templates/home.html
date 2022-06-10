@@ -7,4 +7,24 @@
 {% block content %}
     <h1>This is a view that I've created :D!</h1>
     <p>Welcome to TutoEasy!</p>
+
+    <ul>
+        {% for myNum in myList %}
+            <li>{{ forloop.counter }} - 
+                {{ forloop.counter0 }} - 
+                {{ forloop.revcounter }} -
+                {{ forloop.revcounter0 }}: <b>{{ myNum }}</b>
+                {% if forloop.first %}
+                    <b>First :D</b>
+                {% elif forloop.last %}
+                    <b>Last D:</b>
+                {% endif %}
+                {% if myNum <= 50 %}
+                    <b>Less that 50</b>
+                {% elif myNum == 79 %}
+                    <b>Perfect Num</b>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}

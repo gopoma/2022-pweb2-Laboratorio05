@@ -31,7 +31,10 @@ def home(request):
     print(f"Limited Path: {request.path}")
     print(f"Full Path: {request.get_full_path()}")
     print(request.user)
-    return render(request, "home.html")
+
+    return render(request, "home.html", {
+        "myList": [(2*i+1) for i in range(100)]
+    })
 
 def contact(request):
     return render(request, "contact.html")
