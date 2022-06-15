@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -41,7 +42,15 @@ def contact(request):
 
 def filters(request):
     return render(request, "filters.html", {
+        "inWhatFrameworkWeAre": "django or express",
+        "mySentence": "Express is a good framework",
+        "myDate": datetime.now,
+        "isEditor": False,
+        "myName": "Gustavo",
+        "amountMessages": 10,
         "myText": " Esto es sobre nosotros",
+        "tribe_of_eratosthenes": [13, 29, 37, 47, 53, 61, 79, 83, 97],
+        "level_name": "prismatic haze or chromatic haze",
         "myNumber": 123,
         "myList": [33, 44, 55]
     })

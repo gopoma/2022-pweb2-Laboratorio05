@@ -118,3 +118,17 @@ and # {% if myScore >= 50 and myScore <= 75 %}
 not # {% if not myScore >= 50 %}
 in # {% if user in admins %}
 ```
+
+**Probar la aplicación de varios otros filtros a variables y bloques, revisando la documentación oficial**
+
+```python
+capfirst # Capitalizes the first character of the value. If the first character is not a letter, this filter has no effect.
+center # Centers the value in a field of a given width.
+cut # Removes all values of arg from the given string.
+date # Formats a date according to the given format.
+default # If value evaluates to False, uses the given default. Otherwise, uses the value.
+length # length
+pluralize # Returns a plural suffix if the value is not 1, '1', or an object of length 1. By default, this suffix is 's'.
+random # Returns a random item from the given list.
+title # Converts a string into titlecase by making words start with an uppercase character and the remaining characters lowercase. This tag makes no effort to keep “trivial words” in lowercase.
+```

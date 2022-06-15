@@ -5,7 +5,34 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Filters</h1>
+    <h1>Custom Filters</h1>
+    <p><b>capfirst: </b><span>{{ inWhatFrameworkWeAre|capfirst }}</span></p>
+    <b>center: </b><textarea cols="30" rows="4">{{ inWhatFrameworkWeAre|center:"45" }}</textarea>
+    <p><b>cut: </b><span>{{ mySentence|cut:"o" }} [Without 'o's]</span></p>
+    <p><b>Nowadays without 'date' filter: </b><span>{{ myDate }}</span></p>
+    <p><b>Nowadays with 'date' filter set to 'D d M Y': </b><span>{{ myDate|date:"D d M Y" }}</span></p>
+    <p><b>isEditor: </b>{{ isEditor }} - {{ isEditor|default:"You aren't an Editor!" }}</p>
+    <p><b>myName without 'length' filter: </b><span>{{ myName }}</span></p>
+    <p><b>myName's length: </b><span>{{ myName|length }}</span> -
+        {% if myName|length > 4 %}
+            <span>Your name has Regular length</span>
+        {% endif %}
+    </p>
+    <p><b>myList's length: </b><span>{{ myList|length }}</span></p>
+    <p>You have {{ amountMessages }} message{{ amountMessages|pluralize }}</p>
+    <p><b>Your random prime num: </b><span>{{ tribe_of_eratosthenes|random }}</span></p>
+    <p><b>Level Name: </b><span>{{ level_name|title }}</span></p>
+    <b>Pipelining: </b><textarea cols="45" rows="4">{{ level_name|title|cut:" "|center:"56" }}</textarea>
+
+    <hr>
+
+    <h2>Block Filters and Pipelining</h2>
+        {% filter title|cut:" "|center:"95" %}
+            This text will be HTML-escaped, and will appear in all lowercase.
+        {% endfilter %}
+    <hr>
+
+    <h3>Filters</h3>
     <p><b>myText without filter:</b> {{ myText }}</p>
     <p><b>myText with 'upper' filter:</b> {{ myText|upper }}</p>
     <p><b>myText with 'upper' filter and 'truncatechars' set to 16:</b> {{ myText|upper|truncatechars:"16" }}</p>
