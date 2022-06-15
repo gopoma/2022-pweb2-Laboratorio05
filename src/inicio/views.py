@@ -1,6 +1,7 @@
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
+from personas.models import Persona
 
 # Create your views here.
 def myHomeView(request, *args, **kwargs):
@@ -41,6 +42,21 @@ def contact(request):
     return render(request, "contact.html")
 
 def filters(request):
+    personaItem = Persona.objects.get(id=2)
+    # print(dir(personaItem))
+    contents = dir(personaItem)
+    for content in contents:
+        if content == "nombres":
+            print("Contains nombres property")
+        elif content == "apellidos":
+            print("Contains apellidos property")
+        elif content == "edad":
+            print("Contains edad property")
+        elif content == "donador":
+            print("Contains donador property")
+        elif content == "save":
+            print("Contains save method, that is so important!")
+
     return render(request, "filters.html", {
         "inWhatFrameworkWeAre": "django or express",
         "mySentence": "Express is a good framework",
