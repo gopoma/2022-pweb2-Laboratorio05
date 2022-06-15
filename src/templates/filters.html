@@ -1,0 +1,32 @@
+{% extends 'layouts/main-layout.html' %}
+
+{% block title %}
+    <title>Filters</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Filters</h1>
+    <p><b>myText without filter:</b> {{ myText }}</p>
+    <p><b>myText with 'upper' filter:</b> {{ myText|upper }}</p>
+    <p><b>myText with 'upper' filter and 'truncatechars' set to 16:</b> {{ myText|upper|truncatechars:"16" }}</p>
+
+    <ul>
+        {% for myItem in myList %}
+            <li>
+                <p><b>myList[{{ forloop.counter0 }}] without filters: </b>{{ myItem }}</p>
+                <p><b>myList[{{ forloop.counter0 }}]  with 'add' filter set to 2: </b>{{ myItem|add:2 }}</p>
+                <p><strong>myItem after the filter: </strong>{{ myItem }}</p>
+                {% if myItem == 33 %}
+                    <p>Este número es mágico</p>
+                {% elif myItem > 50 %}
+                    <p>Este número es mayor que 50</p>
+                {% elif myItem|divisibleby:2 %}
+                    <p><b>{{ myItem }} with 'divisibleby' filter set to 2:</b> {{ myItem|divisibleby:2 }}</p>
+                    <p>Este número es par</p>
+                {% else %}
+                    <p>Este número es normal</p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

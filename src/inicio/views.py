@@ -38,3 +38,10 @@ def home(request):
 
 def contact(request):
     return render(request, "contact.html")
+
+def filters(request):
+    return render(request, "filters.html", {
+        "myText": " Esto es sobre nosotros",
+        "myNumber": 123,
+        "myList": [33, 44, 55]
+    })

@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 from contactos.views import home
-from inicio.views import myHomeView, anotherView, tmpView, home, contact
+from inicio.views import myHomeView, anotherView, tmpView, home, contact, filters
 from accounts.views import user_login, user_signup
 
 urlpatterns = [
@@ -28,5 +28,6 @@ urlpatterns = [
     path('', home, name="home"),
     path('contact/', contact, name="contact"),
     path('auth/login/', user_login, name="login"),
-    path('auth/signup/', user_signup, name="signup")
+    path('auth/signup/', user_signup, name="signup"),
+    path('filters/', filters,  name="filters")
 ]
