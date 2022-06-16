@@ -151,3 +151,7 @@ El campo `donador` no puede ser nulo, y cuando no incluimos el campo `donador` e
 `¿Cómo se puede solucionar?`
 
 En primera instancia, podemos recolocar el campo `donador` en el formulario. En segunda instancia, podemos hacer que el campo `donador` sea nullable en el modelo de Persona. En tercera instancia, podemos hacer que el campo `donador` acepte un valor por default.
+
+**Note que una de nuestras vistas se invoca con GET y luego con POST**
+
+Sí, `personaCreateView`

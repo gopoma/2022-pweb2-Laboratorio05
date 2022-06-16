@@ -31,3 +31,6 @@ def personaCreateView(request):
     
     formContext = {"form": form}
     return render(request, "personas/personasCreate.html", formContext)
+
+def searchForHelp(request):
+    return render(request, "personas/search.html")
