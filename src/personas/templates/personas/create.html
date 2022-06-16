@@ -1,0 +1,26 @@
+{% extends 'layouts/main-layout.html' %}
+
+{% block title %}
+    <title>CREATE Persona 2</title>
+{% endblock %}
+
+{% block content %}
+    <h2>CREATE Persona 2</h2>
+    <br>
+    <hr>
+    <br>
+    <h3>GET</h3>
+    <!-- <form action="." method="GET"> Doesn't Work because the prefix -->
+    <form action="/personas/create" method="GET">
+        <input type="text" name="q" placeholder="Search">
+        <input type="submit" value="Search">
+    </form>
+    <br>
+    <hr>
+    <br>
+    <h3>POST</h3>
+    <form action="/personas/create" method="POST">
+        <input type="text" name="q" placeholder="Search">
+        <input type="submit" value="Search">
+    </form>
+{% endblock %}
