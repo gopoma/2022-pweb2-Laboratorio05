@@ -36,8 +36,13 @@ def searchForHelp(request):
     return render(request, "personas/search.html")
 
 def create_persona(request):
+    print(request)
     print(f"Se ha realizado una petición con el método: {request.method}")
     print("GET", request.GET)
     print("POST", request.POST)
+
+    if request.method == "POST":
+        nombre = request.POST.get("q")
+        print(nombre)
 
     return render(request, "personas/create.html")
