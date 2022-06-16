@@ -1,0 +1,24 @@
+{% extends 'layouts/main-layout.html' %}
+
+{% block title %}
+    <title>Description</title>
+{% endblock %}
+
+{% block content %}
+    <h2>Persona's Description</h2>
+    <p><b>Nombre Completo: </b>{{ persona.nombres }} {{ persona.apellidos|upper }}</p>
+    <p><b>Edad: </b>{{ persona.edad }} -
+        {% if persona.edad > 40 %}
+            debe cuidarse del colesterol
+        {% else %}
+            puede comer lo que quiera
+        {% endif %}
+    </p>
+    <p><b>Donador?: </b>
+        {% if persona.donador %}
+            Sí - OK c:
+        {% else %}
+            No - Why :c?
+        {% endif %}
+    </p>
+{% endblock %}

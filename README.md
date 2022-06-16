@@ -132,3 +132,22 @@ pluralize # Returns a plural suffix if the value is not 1, '1', or an object of 
 random # Returns a random item from the given list.
 title # Converts a string into titlecase by making words start with an uppercase character and the remaining characters lowercase. This tag makes no effort to keep “trivial words” in lowercase.
 ```
+
+**Complete la descripción del modelo de persona**
+
+**Intente llenar el formulario para hacerlo inválido**
+
+**Pruebe qué ocurre si no incluímos el campo “donador” en el formulario**
+
+`¿De qué se trata este error?`
+
+```sql
+IntegrityError at /agregar/
+NOT NULL constraint failed: personas_persona.donador
+```
+
+El campo `donador` no puede ser nulo, y cuando no incluimos el campo `donador` en el formulario, entonces este campo se rellena con un valor nulo, lo que ocasiona este error de Integridad en la Base de Datos
+
+`¿Cómo se puede solucionar?`
+
+En primera instancia, podemos recolocar el campo `donador` en el formulario. En segunda instancia, podemos hacer que el campo `donador` sea nullable en el modelo de Persona. En tercera instancia, podemos hacer que el campo `donador` acepte un valor por default.
