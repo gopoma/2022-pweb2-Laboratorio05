@@ -155,3 +155,7 @@ En primera instancia, podemos recolocar el campo `donador` en el formulario. En 
 **Note que una de nuestras vistas se invoca con GET y luego con POST**
 
 Sí, `personaCreateView`
+
+**¿En qué momento se hace llamada GET y en qué momento se hace la llamada POST?**
+
+Cuando colocamos el URL `/personas/create` en el Navegador (Cliente) y damos Enter, entonces ahí se realiza una petición del tipo `GET`, solicitando un archivo HTML, en ese mismo archivo tenemos un formulario, que cuando lo llenamos y lo enviamos, ahí estamos haciendo una petición del tipo `POST`

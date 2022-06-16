@@ -20,6 +20,7 @@
     <br>
     <h3>POST</h3>
     <form action="/personas/create" method="POST">
+        {% csrf_token %}
         <input type="text" name="q" placeholder="Search">
         <input type="submit" value="Search">
     </form>
