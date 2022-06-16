@@ -1,0 +1,17 @@
+{% extends '../layouts/main-layout.html' %}
+
+{% block title %}
+    <title>Test de Personas</title>
+{% endblock %}
+
+{% block content %}
+    <h1>{{ nombre }}</h1>
+    <p><b>Edad: </b>{{ edad }}</p>
+    <h2>
+        {% if edad > 40 %}
+            debe cuidarse del colesterol
+        {% else %}
+            puede comer lo que sea
+        {% endif %}
+    </h2>
+{% endblock %}
