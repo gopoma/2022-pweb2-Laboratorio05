@@ -9,3 +9,9 @@ def personaTestView(request):
         "edad": personaItem.edad
     }
     return render(request, "personas/test.html", personaContext)
+
+def renderingObjects(request):
+    personaItem = Persona.objects.get(id=2)
+    return render(request, "personas/renderingObjects.html", {
+        "persona": personaItem
+    })

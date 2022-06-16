@@ -1,0 +1,11 @@
+{% extends '../layouts/main-layout.html' %}
+
+{% block title %}
+    <title>Rendering Objects</title>
+{% endblock %}
+
+{% block content %} 
+    <h1>Rendering Objects</h1>
+    <p><b>Nombre Completo: </b>{{ persona.nombres }} {{ persona.apellidos }}</p>
+    <p><b>Edad: </b>{{ persona.edad }}</p>
+{% endblock %}

@@ -19,7 +19,7 @@ from django.urls import path
 from contactos.views import home
 from inicio.views import myHomeView, anotherView, tmpView, home, contact, filters
 from accounts.views import user_login, user_signup
-from personas.views import personaTestView
+from personas.views import personaTestView, renderingObjects
 
 urlpatterns = [
     path('initial/', myHomeView, name="Pagina de inicio"),
@@ -31,5 +31,6 @@ urlpatterns = [
     path('auth/login/', user_login, name="login"),
     path('auth/signup/', user_signup, name="signup"),
     path('filters/', filters,  name="filters"),
-    path('persona/', personaTestView, name="persona")
+    path('persona/', personaTestView, name="persona"),
+    path('personaObject/', renderingObjects, name="renderingObjects")
 ]
