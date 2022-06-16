@@ -5,8 +5,8 @@ class PersonaForm(forms.ModelForm):
     class Meta:
         model = Persona
         fields = [
-            "donador",
             "nombres",
             "apellidos",
             "edad",
+            "donador",
         ]
