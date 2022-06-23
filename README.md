@@ -187,3 +187,14 @@ El formulario **sí** tiene los mismos tipos que el modelo, aunque teniendo en c
 **Haga un poco de hacking sobre el código HTML, cambie el tipo de dato de los campos en el formulario**
 
 `done`
+
+**¿Cuál es el valor para las opciones core by default?**
+
+```python
+required = True
+label = FIELD_NAME
+label_suffix = ":"
+initial = None
+help_text = ""
+disabled = False
+```
