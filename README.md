@@ -179,3 +179,7 @@ El formulario **sí** tiene los mismos tipos que el modelo, aunque teniendo en c
 **Modifique el template y Explore otras opciones distintas a form.as_p**
 
 `done c:`
+
+**Ponga a prueba la seguridad de Django haciendo algo de hacking sobre el código HTML: haga que los campos no sean “requeridos”**
+
+`done c:`
