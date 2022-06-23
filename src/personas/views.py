@@ -49,12 +49,16 @@ def create_persona(request):
 
 # Here begins Django 4
 def personasAnotherCreateView(request):
-    form = RawPersonaForm() # request.POST
+    form = RawPersonaForm() # request.GET
     if request.method == "POST":
         form = RawPersonaForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+        else:
+            print(form.errors)
 
-    anotherForm = RawPersonaForm().as_table()
-    print(anotherForm)
+    # anotherForm = RawPersonaForm().as_table()
+    # print(anotherForm)
     return render(request, "personas/personasAnotherCreateView.html", {
         "form": form,
     })

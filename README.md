@@ -183,3 +183,7 @@ El formulario **sí** tiene los mismos tipos que el modelo, aunque teniendo en c
 **Ponga a prueba la seguridad de Django haciendo algo de hacking sobre el código HTML: haga que los campos no sean “requeridos”**
 
 `done c:`
+
+**Haga un poco de hacking sobre el código HTML, cambie el tipo de dato de los campos en el formulario**
+
+`done`
