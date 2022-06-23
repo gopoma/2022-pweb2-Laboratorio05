@@ -49,7 +49,7 @@ def create_persona(request):
 
 # Here begins Django 4
 def personasAnotherCreateView(request):
-    form = RawPersonaForm()
+    form = RawPersonaForm(request.POST)
     anotherForm = RawPersonaForm().as_table()
     print(anotherForm)
     
