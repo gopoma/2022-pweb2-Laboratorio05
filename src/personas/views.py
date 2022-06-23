@@ -50,7 +50,9 @@ def create_persona(request):
 # Here begins Django 4
 def personasAnotherCreateView(request):
     form = RawPersonaForm()
+    anotherForm = RawPersonaForm().as_table()
+    print(anotherForm)
     
     return render(request, "personas/personasAnotherCreateView.html", {
-        "form": form
+        "form": form,
     })

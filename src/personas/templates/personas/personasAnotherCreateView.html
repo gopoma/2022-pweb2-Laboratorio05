@@ -6,10 +6,32 @@
 
 {% block content %}
     <h1>RawPersonaForm</h1>
+    <hr>
+    <h2>form.as_p()</h2>
     <!-- . works as the route has no prefix! -->
     <form action="." method="POST">
         {% csrf_token %}
         {{ form.as_p }}
+        <input type="submit" value="Grabar">
+    </form>
+    <br>
+    <hr>
+    <br>
+    <h2>form.as_ul()</h2>
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{ form.as_ul }}
+        <input type="submit" value="Grabar">
+    </form>
+    <br>
+    <hr>
+    <br>
+    <h2>form.as_table()</h2>
+    <form action="." method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
         <input type="submit" value="Grabar">
     </form>
 {% endblock %}

@@ -171,3 +171,11 @@ El formulario **sí** tiene los mismos tipos que el modelo, aunque teniendo en c
 * `BinaryField`
 * `BigIntegerField`
 * `CommaSeparatedIntegerField`
+
+**Inspeccione el código HTML generado, observe los tags generados**
+
+`done c:`
+
+**Modifique el template y Explore otras opciones distintas a form.as_p**
+
+`done c:`
