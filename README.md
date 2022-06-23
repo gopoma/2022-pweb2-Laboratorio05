@@ -158,4 +158,16 @@ Sí, `personaCreateView`
 
 **¿En qué momento se hace llamada GET y en qué momento se hace la llamada POST?**
 
-Cuando colocamos el URL `/personas/create` en el Navegador (Cliente) y damos Enter, entonces ahí se realiza una petición del tipo `GET`, solicitando un archivo HTML, en ese mismo archivo tenemos un formulario, que cuando lo llenamos y lo enviamos, ahí estamos haciendo una petición del tipo `POST`
+Cuando colocamos el URL `/personas/create` en el Navegador (Cliente) y damos Enter, entonces ahí se realiza una petición del tipo `GET`, solicitando un archivo HTML, en ese mismo archivo tenemos un formulario, que cuando lo llenamos y lo enviamos, ahí estamos haciendo una petición del tipo `POST`.
+
+**¿El formulario tiene los mismos campos y tipos que el modelo?**
+
+El formulario **sí** tiene los mismos tipos que el modelo, aunque teniendo en cuenta que un campo viene acompañado de sus restricciones, podemos decir que **no** porque no hemos definido una restricción para el número de caracteres máximo y puede ser un punto de debilidad puesto a que por ahí pueden detornarnos un Error de Integridad en la Base de Datos.
+
+**Revise si algún tipo de dato permitido en el modelo no existe en los tipos de datos de forms**
+
+**Sí**, existen tipos de dato permitidos en el modelo que no existen en los tipos de datos de forms, como:
+
+* `BinaryField`
+* `BigIntegerField`
+* `CommaSeparatedIntegerField`

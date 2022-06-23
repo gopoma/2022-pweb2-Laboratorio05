@@ -6,6 +6,7 @@ class Persona(models.Model):
     apellidos = models.CharField(max_length=100)
     edad = models.IntegerField() # max_digits=3
     donador = models.BooleanField()
+    # anotherField = models.BinaryField
 
     def __str__(self):
         return f"{self.nombres} {self.apellidos}"

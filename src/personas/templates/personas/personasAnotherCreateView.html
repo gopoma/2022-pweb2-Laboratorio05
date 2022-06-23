@@ -1,0 +1,15 @@
+{% extends 'layouts/main-layout.html' %}
+
+{% block title %}
+    <title>RawPersonaForm</title>
+{% endblock %}
+
+{% block content %}
+    <h1>RawPersonaForm</h1>
+    <!-- . works as the route has no prefix! -->
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Grabar">
+    </form>
+{% endblock %}
