@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Persona(models.Model):
@@ -8,8 +9,9 @@ class Persona(models.Model):
     donador = models.BooleanField()
     # anotherField = models.BinaryField
 
+    # def get_absolute_url(self):
+    #     return f"/personas/{self.id}/"
     def get_absolute_url(self):
-        return f"/personas/{self.id}/"
-
+        return reverse("browsing", kwargs={"myID": self.id})
     def __str__(self):
         return f"{self.nombres} {self.apellidos}"
