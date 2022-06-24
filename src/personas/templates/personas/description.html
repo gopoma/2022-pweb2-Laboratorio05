@@ -6,6 +6,7 @@
 
 {% block content %}
     <h2>Persona's Description</h2>
+    <a href="../">Go back to Listing</a>
     <p><b>Nombre Completo: </b>{{ persona.nombres }} {{ persona.apellidos|upper }}</p>
     <p><b>Edad: </b>{{ persona.edad }} -
         {% if persona.edad > 40 %}

@@ -32,7 +32,7 @@
                     {{ persona.nombres }} {{ persona.apellidos }}
                 </td>
                 <td>
-                    <a href="/personas/{{ persona.id }}">View</a>
+                    <a href="{{ persona.get_absolute_url }}">View</a>
                 </td>
                 <td>
                     <a href="/personas/{{ persona.id }}/edit">Edit</a>

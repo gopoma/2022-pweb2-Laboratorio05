@@ -8,5 +8,8 @@ class Persona(models.Model):
     donador = models.BooleanField()
     # anotherField = models.BinaryField
 
+    def get_absolute_url(self):
+        return f"/personas/{self.id}/"
+
     def __str__(self):
         return f"{self.nombres} {self.apellidos}"
