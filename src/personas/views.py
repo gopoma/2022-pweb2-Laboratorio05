@@ -63,3 +63,13 @@ def personasAnotherCreateView(request):
     return render(request, "personas/personasAnotherCreateView.html", {
         "form": form,
     })
+
+def personaEditView(request):
+    person = Persona.objects.get(id=2)
+    form = PersonaForm(request.POST or None, instance=person)
+    if form.is_valid():
+        form.save()
+        form = PersonaForm()
+    return render(request, "personas/edit.html", {
+        "form": form
+    })

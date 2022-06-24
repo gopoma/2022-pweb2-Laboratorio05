@@ -27,7 +27,8 @@ from personas.views import (
     searchForHelp, 
     create_persona,
     # Here begins Django 4
-    personasAnotherCreateView
+    personasAnotherCreateView,
+    personaEditView
 )
 
 urlpatterns = [
@@ -47,5 +48,6 @@ urlpatterns = [
     path('search/', searchForHelp, name="buscar"),
     path('personas/create', create_persona, name="createPersona"),
     # Here begins Django 4
-    path('anotherAdd/', personasAnotherCreateView, name="OtroAgregarPersonas")
+    path('anotherAdd/', personasAnotherCreateView, name="OtroAgregarPersonas"),
+    path('personas/edit/', personaEditView, name="editPersona")
 ]
