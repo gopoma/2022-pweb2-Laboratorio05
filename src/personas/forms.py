@@ -15,7 +15,15 @@ class RawPersonaForm(forms.Form):
     nombres = forms.CharField(
         label="Your name", 
         initial=None,
-        disabled=False
+        disabled=False,
+        widget=forms.Textarea(
+            attrs={
+                "placeholder": "Sólo tu nombre, por favor",
+                "id": "nombreID",
+                "class": "special",
+                "cols": 10,
+            }
+        )
     )
     apellidos = forms.CharField(
         initial=None,
