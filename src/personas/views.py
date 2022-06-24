@@ -77,3 +77,9 @@ def personaEditView(request):
     return render(request, "personas/edit.html", {
         "form": form
     })
+
+def personasShowObject(request, myID):
+    persona = Persona.objects.get(id=myID)
+    return render(request, "personas/description.html", {
+        "persona": persona
+    })
