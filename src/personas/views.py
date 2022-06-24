@@ -66,7 +66,11 @@ def personasAnotherCreateView(request):
 
 def personaEditView(request):
     person = Persona.objects.get(id=2)
-    form = PersonaForm(request.POST or None, instance=person)
+    initialValues = {
+        "nombres": "Without name",
+        "apellidos": "Without lastname"
+    }
+    form = PersonaForm(request.POST or None, instance=person, initial=initialValues)
     if form.is_valid():
         form.save()
         form = PersonaForm()
