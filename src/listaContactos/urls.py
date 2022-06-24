@@ -29,7 +29,8 @@ from personas.views import (
     # Here begins Django 4
     personasAnotherCreateView,
     personaEditView,
-    personasShowObject
+    personasShowObject,
+    personasDeleteView
 )
 
 urlpatterns = [
@@ -51,5 +52,6 @@ urlpatterns = [
     # Here begins Django 4
     path('anotherAdd/', personasAnotherCreateView, name="OtroAgregarPersonas"),
     path('personas/edit/', personaEditView, name="editPersona"),
-    path('personas/<int:myID>', personasShowObject, name="browsing")
+    path('personas/<int:myID>/', personasShowObject, name="browsing"),
+    path('personas/<int:myID>/delete/', personasDeleteView, name="deleting")
 ]

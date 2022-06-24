@@ -85,3 +85,12 @@ def personasShowObject(request, myID):
     return render(request, "personas/description.html", {
         "persona": persona
     })
+
+def personasDeleteView(request, myID):
+    persona = get_object_or_404(Persona, id=myID)
+    if request.method == "POST":
+        print("lo borró")
+        persona.delete()
+    return render(request, "personas/delete.html", {
+        "persona": persona
+    })
