@@ -6,7 +6,7 @@
 
 {% block content %}
     <h1>Edit Persona</h1>
-    <form action="/personas/edit/" method="POST">
+    <form action="/personas/{{ idPersona }}/edit/" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Edit">

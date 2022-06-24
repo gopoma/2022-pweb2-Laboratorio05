@@ -64,17 +64,21 @@ def personasAnotherCreateView(request):
         "form": form,
     })
 
-def personaEditView(request):
-    person = Persona.objects.get(id=2)
-    initialValues = {
-        "nombres": "Without name",
-        "apellidos": "Without lastname"
-    }
-    form = PersonaForm(request.POST or None, instance=person, initial=initialValues)
+def personaEditView(request, myID):
+    persona = Persona.objects.get(id=myID)
+    initialValues = {}
+    # initialValues = {
+    #     "nombres": "Without name",
+    #     "apellidos": "Without lastname"
+    # }
+    form = PersonaForm(request.POST or None, instance=persona, initial=initialValues)
     if form.is_valid():
         form.save()
-        form = PersonaForm()
+        # form = PersonaForm()
+        # return redirect("../") # /personas/12/edit -> /personas/12
+        return redirect("/personas")
     return render(request, "personas/edit.html", {
+        "idPersona": persona.id,
         "form": form
     })
 
@@ -91,7 +95,14 @@ def personasDeleteView(request, myID):
     if request.method == "POST":
         print("lo borró")
         persona.delete()
-        return redirect("/")
+        return redirect("/personas")
     return render(request, "personas/delete.html", {
         "persona": persona
+    })
+
+def personasListView(request):
+    personas = Persona.objects.all()
+
+    return render(request, "personas/personasLista.html", {
+        "personas": personas
     })

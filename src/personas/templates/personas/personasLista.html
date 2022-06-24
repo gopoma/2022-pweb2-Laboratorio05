@@ -1,0 +1,47 @@
+{% extends 'layouts/main-layout.html' %}
+
+{% block styles %}
+    <style>
+        tr, th, td {
+            padding: 1.2rem;
+            color: #000;
+            background-color: #DDD;
+        }
+    </style>
+{% endblock %}
+
+{% block title %}
+    <title>Personas</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Personas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for persona in personas %}
+            <tr>
+                <td>
+                    {{ persona.nombres }} {{ persona.apellidos }}
+                </td>
+                <td>
+                    <a href="/personas/{{ persona.id }}">View</a>
+                </td>
+                <td>
+                    <a href="/personas/{{ persona.id }}/edit">Edit</a>
+                </td>
+                <td>
+                    <a href="/personas/{{ persona.id }}/delete">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
