@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from contactos.views import home
 from inicio.views import myHomeView, anotherView, tmpView, home, contact, filters
@@ -35,6 +35,7 @@ from personas.views import (
 )
 
 urlpatterns = [
+    path('personas/', include("personas.urls", namespace="personas")),
     path('initial/', myHomeView, name="Pagina de inicio"),
     path('anotherview/', anotherView, name="Another View!"),
     path('tmpView/', tmpView, name="tmp"),
@@ -47,13 +48,8 @@ urlpatterns = [
     path('persona/', personaTestView, name="persona"),
     path('personaObject/', renderingObjects, name="renderingObjects"),
     path('personas/description', description, name="description"),
-    path('agregar/', personaCreateView, name="createPersona"),
     path('search/', searchForHelp, name="buscar"),
-    path('personas/create', create_persona, name="createPersona"),
+    path('personas/add', create_persona, name="createPersona"),
     # Here begins Django 4
-    path('anotherAdd/', personasAnotherCreateView, name="OtroAgregarPersonas"),
-    path('personas/<int:myID>/edit/', personaEditView, name="editPersona"),
-    path('personas/<int:myID>/', personasShowObject, name="browsing"),
-    path('personas/<int:myID>/delete/', personasDeleteView, name="deleting"),
-    path('personas/', personasListView, name="listing")
+    path('anotherAdd/', personasAnotherCreateView, name="OtroAgregarPersonas")
 ]
