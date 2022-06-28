@@ -51,5 +51,7 @@ urlpatterns = [
     path('search/', searchForHelp, name="buscar"),
     path('personas/add', create_persona, name="createPersona"),
     # Here begins Django 4
-    path('anotherAdd/', personasAnotherCreateView, name="OtroAgregarPersonas")
+    path('anotherAdd/', personasAnotherCreateView, name="OtroAgregarPersonas"),
+    # Here begins Django 5
+    path('estudiantes/', include("estudiantes.urls", namespace="estudiantes"))
 ]
