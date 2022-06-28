@@ -1,0 +1,14 @@
+{% extends 'layouts/main-layout.html' %}
+
+{% block title %}
+    <title>Lista de Estudiantes</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Listado de Estudiantes</h1>
+    <ul>
+        {% for estudiante in object_list %}
+            <li>{{ estudiante.id }} - {{ estudiante.fullname }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
