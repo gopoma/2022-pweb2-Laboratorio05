@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import (
     ListView,
-    DetailView
+    DetailView,
+    CreateView
 )
 from .models import Estudiante
 
@@ -13,3 +14,14 @@ class EstudianteListView(ListView):
 
 class EstudianteDetailView(DetailView):
     model = Estudiante
+
+class EstudianteCreateView(CreateView):
+    model = Estudiante
+    fields = [
+        "cui",
+        "fullname",
+        "age",
+        "email",
+        "phone_number",
+        "graduated",
+    ]
