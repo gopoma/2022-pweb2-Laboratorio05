@@ -1,0 +1,16 @@
+{% extends 'layouts/main-layout.html' %}
+
+{% block title %}
+    <title>Delete Estudiante</title>
+{% endblock %}
+
+{% block content %}
+    <h2>Borrando Estudiante</h1>
+    <h3>{{ estudiante.fullname }}</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <p>Confirme que desea borrar a este Estudiante</p>
+        <input type="submit" value="Confirmar">
+        <a href="/estudiantes">Cancelar</a>
+    </form>
+{% endblock %}

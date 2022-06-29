@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import (
     ListView,
     DetailView,
     CreateView,
-    UpdateView
+    UpdateView,
+    DeleteView
 )
 from .models import Estudiante
 
@@ -11,7 +13,7 @@ from .models import Estudiante
 class EstudianteListView(ListView):
     model = Estudiante
     # queryset = Estudiante.objects.filter(age__lte="18")
-    paginate_by = 2
+    # paginate_by = 2
 
 class EstudianteDetailView(DetailView):
     model = Estudiante
@@ -35,3 +37,7 @@ class EstudianteUpdateView(UpdateView):
         "city",
         "district"
     ]
+
+class EstudianteDeleteView(DeleteView):
+    model = Estudiante
+    success_url = reverse_lazy("estudiantes:estudiante-list")
