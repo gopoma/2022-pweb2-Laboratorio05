@@ -25,9 +25,9 @@
 {% endblock %}
 
 {% block content %}
-    <a class="go-back" href="../">Go back...</a>
-    <h1>Detalle del Estudiante</h1>
-    <h2>{{ object.fullname }}</h2>
+    <a class="go-back" href="../">Go back</a>
+    <h2>Detalle del Estudiante</h2>
+    <h3>{{ object.fullname }}</h3>
     <p><b>Edad: </b>{{ object.age }} años de edad.</p>
     <p><b>Graduado?: </b>
         {% if object.graduated %}

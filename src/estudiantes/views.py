@@ -29,6 +29,7 @@ class EstudianteCreateView(CreateView):
 
 class EstudianteUpdateView(UpdateView):
     model = Estudiante
+    template_name = "estudiantes/estudiante_edit.html"
     fields = [
         "state",
         "city",
