@@ -7,9 +7,17 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
+from django.views import View
+from django.http import HttpResponse, JsonResponse
 from .models import Estudiante
 
 # Create your views here.
+class EstudianteQueryView(View):
+    def get(self, request, *args, **kwargs):
+        queryset = Estudiante.objects.filter(age__lte="20")
+        return JsonResponse(list(queryset.values()), safe=False)
+        # return HttpResponse("Hola mundo con Clases")
+
 class EstudianteListView(ListView):
     model = Estudiante
     # queryset = Estudiante.objects.filter(age__lte="18")

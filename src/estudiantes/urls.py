@@ -4,7 +4,8 @@ from .views import (
     EstudianteDetailView,
     EstudianteCreateView,
     EstudianteUpdateView,
-    EstudianteDeleteView
+    EstudianteDeleteView,
+    EstudianteQueryView
 )
 
 app_name = "estudiantes"
@@ -13,5 +14,6 @@ urlpatterns = [
     path('<int:pk>/', EstudianteDetailView.as_view(), name="estudiante-detail"),
     path('create/', EstudianteCreateView.as_view(), name="estudiante-create"),
     path('<int:pk>/update/', EstudianteUpdateView.as_view(), name="estudiante-update"),
-    path('<int:pk>/delete/', EstudianteDeleteView.as_view(), name="estudiante-delete")
+    path('<int:pk>/delete/', EstudianteDeleteView.as_view(), name="estudiante-delete"),
+    path('query/', EstudianteQueryView.as_view(), name="estudiante-query")
 ]
