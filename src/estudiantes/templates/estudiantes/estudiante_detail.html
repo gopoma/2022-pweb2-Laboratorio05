@@ -1,0 +1,24 @@
+{% extends 'layouts/main-layout.html' %}
+
+{% block title %}
+    <title>Detalle del Estudiante</title>
+{% endblock %}
+
+{% block styles %}
+    <style>
+
+    </style>
+{% endblock %}
+
+{% block content %}
+    <h1>Detalle del Estudiante</h1>
+    <h2>{{ object.fullname }}</h2>
+    <p><b>Edad: </b>{{ object.age }} años de edad.</p>
+    <p><b>Graduado?: </b>
+        {% if object.graduated %}
+            <span>Sí, está estudiante PostGrado</span>
+        {% else %}
+            <span>No, aún está en Pregrado</span>
+        {% endif %}
+    </p>
+{% endblock %}
