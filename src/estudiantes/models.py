@@ -4,6 +4,7 @@ from django.db import models
 class Estudiante(models.Model):
     cui = models.CharField(max_length=8)
     fullname = models.CharField(max_length=255)
+    age = models.IntegerField()
     email = models.EmailField()
     phone_number = models.CharField(max_length=9)
     graduated = models.BooleanField(default=False)

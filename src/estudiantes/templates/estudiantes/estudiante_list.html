@@ -4,11 +4,40 @@
     <title>Lista de Estudiantes</title>
 {% endblock %}
 
+{% block styles %}
+    <style>
+        .students {
+            display: grid;
+            gap: 1.2rem;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .students__student {
+            border: 2px solid #000;
+            border-radius: 4px;
+            padding: 0.75rem;
+            background-color: #DDD;
+        }
+    </style>
+{% endblock %}
+
 {% block content %}
     <h1>Listado de Estudiantes</h1>
-    <ul>
+    <section class="students">
         {% for estudiante in object_list %}
-            <li>{{ estudiante.id }} - {{ estudiante.fullname }}</li>
+            <article class="students__student">
+                <h3>{{ estudiante.fullname }}</h3>
+                <p><b>CUI: </b>{{ estudiante.cui }}</p>
+                <p><b>Email: </b>{{ estudiante.email }}</p>
+                <p><b>Teléfono: </b>{{ estudiante.phone_number }}</p>
+                <p><b>Edad: </b>{{ estudiante.age }}</p>
+                <p><b>Graduado?: </b>
+                    {% if estudiante.graduated %}
+                        <span>Sí</span>
+                    {% else %}
+                        <span>No</span>
+                    {% endif %}
+                </p>
+            </article>
         {% endfor %}
-    </ul>
+    </section>
 {% endblock %}
