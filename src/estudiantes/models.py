@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Estudiante(models.Model):
@@ -12,5 +13,7 @@ class Estudiante(models.Model):
     city = models.CharField(blank=True, max_length=255)
     district = models.CharField(blank=True, max_length=255) 
 
+    def get_absolute_url(self):
+        return reverse("estudiantes:estudiante-detail", kwargs={"pk": self.id})
     def __str__(self):
         return self.fullname

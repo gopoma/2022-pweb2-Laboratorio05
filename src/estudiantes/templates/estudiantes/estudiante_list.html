@@ -25,7 +25,9 @@
     <section class="students">
         {% for estudiante in object_list %}
             <article class="students__student">
-                <h3>{{ estudiante.fullname }}</h3>
+                <h3>
+                    <a href="{{ estudiante.get_absolute_url }}">{{ estudiante.fullname }}</a>
+                </h3>
                 <p><b>CUI: </b>{{ estudiante.cui }}</p>
                 <p><b>Email: </b>{{ estudiante.email }}</p>
                 <p><b>Teléfono: </b>{{ estudiante.phone_number }}</p>
