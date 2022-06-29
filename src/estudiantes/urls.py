@@ -2,12 +2,14 @@ from django.urls import path
 from .views import (
     EstudianteListView,
     EstudianteDetailView,
-    EstudianteCreateView
+    EstudianteCreateView,
+    EstudianteUpdateView
 )
 
 app_name = "estudiantes"
 urlpatterns = [
     path('', EstudianteListView.as_view(), name="estudiante-list"),
     path('<int:pk>/', EstudianteDetailView.as_view(), name="estudiante-detail"),
-    path('create/', EstudianteCreateView.as_view(), name="estudiante-create")
+    path('create/', EstudianteCreateView.as_view(), name="estudiante-create"),
+    path('<int:pk>/update/', EstudianteUpdateView.as_view(), name="estudiante-update")
 ]

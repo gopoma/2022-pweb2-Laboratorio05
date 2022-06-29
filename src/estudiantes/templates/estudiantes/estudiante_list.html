@@ -28,6 +28,7 @@
                 <h3>
                     <a href="{{ estudiante.get_absolute_url }}">{{ estudiante.fullname }}</a>
                 </h3>
+                <a href="{{ estudiante.get_absolute_url }}update">Edit</a>
                 <p><b>CUI: </b>{{ estudiante.cui }}</p>
                 <p><b>Email: </b>{{ estudiante.email }}</p>
                 <p><b>Teléfono: </b>{{ estudiante.phone_number }}</p>
@@ -39,6 +40,9 @@
                         <span>No</span>
                     {% endif %}
                 </p>
+                <p><b>State: </b>{{ estudiante.state|default:"No declara..." }}</p>
+                <p><b>City: </b>{{ estudiante.city|default:"No declara..." }}</p>
+                <p><b>District: </b>{{ estudiante.district|default:"No declara..." }}</p>
             </article>
         {% endfor %}
     </section>

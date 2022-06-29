@@ -36,4 +36,7 @@
             <span>No, aún está en Pregrado</span>
         {% endif %}
     </p>
+    <p><b>State: </b>{{ estudiante.state|default:"No declara..." }}</p>
+    <p><b>City: </b>{{ estudiante.city|default:"No declara..." }}</p>
+    <p><b>District: </b>{{ estudiante.district|default:"No declara..." }}</p>
 {% endblock %}

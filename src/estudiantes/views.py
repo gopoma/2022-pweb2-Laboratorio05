@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.views.generic import (
     ListView,
     DetailView,
-    CreateView
+    CreateView,
+    UpdateView
 )
 from .models import Estudiante
 
@@ -24,4 +25,12 @@ class EstudianteCreateView(CreateView):
         "email",
         "phone_number",
         "graduated",
+    ]
+
+class EstudianteUpdateView(UpdateView):
+    model = Estudiante
+    fields = [
+        "state",
+        "city",
+        "district"
     ]
