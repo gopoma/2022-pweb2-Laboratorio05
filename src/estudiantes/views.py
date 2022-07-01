@@ -14,13 +14,14 @@ from .models import Estudiante
 # Create your views here.
 class EstudianteQueryView(View):
     def get(self, request, *args, **kwargs):
-        queryset = Estudiante.objects.filter(age__lte="20")
+        # queryset = Estudiante.objects.filter(age__lte="20")
+        queryset = Estudiante.objects.all()
         return JsonResponse(list(queryset.values()), safe=False)
         # return HttpResponse("Hola mundo con Clases")
 
 class EstudianteListView(ListView):
     model = Estudiante
-    # queryset = Estudiante.objects.filter(age__lte="18")
+    # queryset = Estudiante.objects.filter(age__lte="18") # SELECT * FROM estudiates WHERE age <= 18;
     # paginate_by = 2
 
 class EstudianteDetailView(DetailView):
